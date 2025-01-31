@@ -1,7 +1,7 @@
 class Solution {
 public:
     int reverse(int x) {
-         long rev = 0;  // Use long to handle overflow
+         long rev = 0;  
 
         while (x != 0) {
             int rem = x % 10;
@@ -9,7 +9,6 @@ public:
             x /= 10;
         }
 
-        // Check for overflow
         if (rev > INT_MAX || rev < INT_MIN) {
             return 0;
         }
