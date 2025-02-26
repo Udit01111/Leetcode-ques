@@ -1,14 +1,14 @@
 class Solution {
 public:
 
-    void nlevel (TreeNode* root, int curr, int level,vector<int>&v){
+    void onlevel (TreeNode* root, int curr, int level,vector<int>&v){
         if (root==NULL) return;
         if(curr==level){
             v.push_back(root->val);
             return;
         }
-        nlevel (root->left,curr+1,level,v);
-        nlevel (root->right,curr+1,level,v);
+        onlevel (root->left,curr+1,level,v);
+        onlevel (root->right,curr+1,level,v);
     }
 
     int levels (TreeNode* root){
@@ -20,7 +20,7 @@ public:
         int n =levels(root);
         for(int i=1;i<=n;i++){
             vector <int > v;
-            nlevel(root,1,i,v);
+            onlevel(root,1,i,v);
             ans.push_back(v);
         }
 
