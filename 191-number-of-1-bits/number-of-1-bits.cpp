@@ -1,15 +1,18 @@
 class Solution {
 public:
     int hammingWeight(int n) {
-      int count=0;
-       while(n>0){
-        if(n%2==1){
-            count++;
+        vector <int> arr;
+        int count=0;
+        if(n==0) return 0;
+        for(int i=0;n>0;i++){
+            arr.push_back(n%2);
+            n=n/2;
         }
-        n=n/2;
-        
-       }
 
-       return count;
+        for(int i=0;i<arr.size();i++){
+            if(arr[i]==1) count++;
+        }
+
+        return count;
     }
 };
